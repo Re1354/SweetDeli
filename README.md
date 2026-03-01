@@ -110,15 +110,6 @@ VITE_API_URL=http://localhost:5000/api
 
 ---
 
-## 📚 Documentation
-
-* **QUICKSTART.md** – Setup and installation guide
-* **DEVELOPMENT.md** – Development workflow and best practices
-* **client/COMPONENT_STRUCTURE.md** – Frontend architecture documentation
-* **server/API_DOCUMENTATION.md** – Backend API reference
-
----
-
 ## ✨ Implemented Features
 
 ### Frontend
