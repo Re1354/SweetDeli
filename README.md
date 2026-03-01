@@ -1,50 +1,61 @@
-# 🍰 SweetDeli - E-Commerce Platform
+# SweetDeli – Full-Stack E-Commerce Platform
 
-A modern, full-stack e-commerce web application for a sweet delicacies shop.
+SweetDeli is a modern, full-stack e-commerce web application for a sweet delicacies shop, built to demonstrate clean UI design, scalable backend architecture, and secure authentication using industry best practices.
+
+---
 
 ## 🚀 Tech Stack
 
 ### Frontend
 
-- **React** - Modern UI library
-- **Tailwind CSS** - Utility-first CSS framework
-- **React Router** - Client-side routing
-- **Axios** - HTTP client
+* **React** – Component-based UI development
+* **Tailwind CSS** – Utility-first styling for rapid, consistent design
+* **React Router** – Client-side routing
+* **Axios** – API communication
 
 ### Backend
 
-- **Node.js** - Runtime environment
-- **Express** - Web framework
-- **MongoDB** - NoSQL database
-- **JWT** - Authentication
-- **Bcrypt** - Password hashing
+* **Node.js** – JavaScript runtime
+* **Express.js** – RESTful API framework
+* **MongoDB** – NoSQL database
+* **Mongoose** – Object Data Modeling (ODM)
+* **JWT** – Secure authentication
+* **Bcrypt** – Password hashing
+
+---
 
 ## 📁 Project Structure
 
 ```
 sweetdeli/
 ├── client/        # React frontend
-├── server/        # Node + Express backend
+├── server/        # Node.js + Express backend
 ├── README.md
 └── .gitignore
 ```
 
-## 🎯 Features
+---
 
-- User authentication (Register/Login)
-- Role-based access control (User/Admin)
-- Product catalog with categories
-- Responsive design (Mobile-first)
-- Newsletter subscription
-- Secure API endpoints
+## 🎯 Core Features
+
+* User authentication (Register / Login)
+* Role-based access control (User / Admin)
+* Product catalog with categorized listings
+* Fully responsive, mobile-first UI
+* Newsletter subscription system
+* Secure and optimized RESTful APIs
+
+---
 
 ## 🛠️ Getting Started
 
 ### Prerequisites
 
-- Node.js (v16 or higher)
-- MongoDB (local or Atlas)
-- npm or yarn
+* Node.js (v16 or higher)
+* MongoDB (Local or Atlas)
+* npm or yarn
+
+---
 
 ### Installation
 
@@ -64,11 +75,11 @@ npm install
 npm start
 ```
 
+---
+
 ### Environment Variables
 
-#### Server
-
-Create `.env` file in the `server` directory (see `.env.example`):
+#### Server (`/server/.env`)
 
 ```env
 NODE_ENV=development
@@ -79,67 +90,70 @@ JWT_EXPIRE=7d
 CLIENT_URL=http://localhost:3000
 ```
 
-#### Client
-
-Create `.env` file in the `client` directory (see `.env.example`):
+#### Client (`/client/.env`)
 
 ```env
 VITE_API_URL=http://localhost:5000/api
 ```
 
+---
+
 ## 📝 Development Phases
 
-- ✅ Phase 0: Project Setup
-- ✅ Phase 1: Frontend Planning
-- ✅ Phase 2: Frontend Development
-- ✅ Phase 3: Backend Planning
-- ✅ Phase 4: Backend Development
-- ✅ Phase 5: Frontend ↔ Backend Integration
-- ✅ Phase 6: Testing & Polish
+* ✅ Phase 0: Project Setup
+* ✅ Phase 1: Frontend Planning
+* ✅ Phase 2: Frontend Development
+* ✅ Phase 3: Backend Planning
+* ✅ Phase 4: Backend Development
+* ✅ Phase 5: Frontend ↔ Backend Integration
+* ✅ Phase 6: Testing & Optimization
+
+---
 
 ## 📚 Documentation
 
-- **[QUICKSTART.md](QUICKSTART.md)** - Complete setup and installation guide
-- **[DEVELOPMENT.md](DEVELOPMENT.md)** - Developer guide and best practices
-- **[client/COMPONENT_STRUCTURE.md](client/COMPONENT_STRUCTURE.md)** - Frontend
-  component documentation
-- **[server/API_DOCUMENTATION.md](server/API_DOCUMENTATION.md)** - Backend API
-  reference
+* **QUICKSTART.md** – Setup and installation guide
+* **DEVELOPMENT.md** – Development workflow and best practices
+* **client/COMPONENT_STRUCTURE.md** – Frontend architecture documentation
+* **server/API_DOCUMENTATION.md** – Backend API reference
 
-## ✨ Features Implemented
+---
+
+## ✨ Implemented Features
 
 ### Frontend
 
-- ✅ Responsive navigation bar with authentication dropdown
-- ✅ Beautiful hero section with product imagery
-- ✅ Service slider with navigation dots
-- ✅ Category icons grid (6 categories)
-- ✅ Popular products grid with dynamic image loading
-- ✅ Features section highlighting key benefits
-- ✅ Video showcase section (YouTube embed)
-- ✅ Testimonials section
-- ✅ Newsletter subscription with image gallery
-- ✅ Comprehensive footer with app download links
-- ✅ Login page with social login options
-- ✅ Register page with validation and terms acceptance
-- ✅ AuthContext for global authentication state
-- ✅ Protected routes and auth flow
-- ✅ Full API integration with error handling
-- ✅ Mobile-first responsive design
-- ✅ Product images with Vite asset loading
+* Responsive navigation bar with authentication dropdown
+* Hero section with promotional content
+* Interactive service slider with navigation indicators
+* Category icon grid (6 categories)
+* Popular products section with dynamic rendering
+* Features section highlighting service advantages
+* Embedded video showcase
+* Customer testimonials slider
+* Newsletter subscription with image gallery
+* Comprehensive footer with app store links
+* Login and registration pages with validation
+* Global authentication state using Context API
+* Protected routes and secure auth flow
+* Full API integration with graceful error handling
+* Mobile-first, responsive design
+* Optimized asset loading using Vite
+
+---
 
 ### Backend
 
-- ✅ Express.js server with security middleware
-- ✅ MongoDB database with Mongoose ODM
-- ✅ User authentication (register/login/me)
-- ✅ JWT token-based authentication
-- ✅ Role-based access control (user/admin)
-- ✅ Product CRUD operations with pagination
-- ✅ Newsletter subscription API with resubscribe logic
-- ✅ Mongoose schema validation
-- ✅ Error handling middleware with environment-aware responses
-- ✅ Security (Helmet, CORS, Rate limiting)
-- ✅ Password hashing with bcrypt
+* Express.js server with security best practices
+* MongoDB integration using Mongoose
+* User authentication APIs (Register / Login / Profile)
+* JWT-based authentication and authorization
+* Role-based access control (User / Admin)
+* Product CRUD APIs with pagination
+* Newsletter subscription API with duplicate handling
+* Schema-level validation
+* Centralized error handling with environment-aware responses
+* Security middleware (Helmet, CORS, Rate Limiting)
+* Password hashing using bcrypt
 
-
+---
