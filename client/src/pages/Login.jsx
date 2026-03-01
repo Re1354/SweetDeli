@@ -35,9 +35,9 @@ const Login = () => {
   };
 
   return (
-    <div className="h-screen flex">
+    <div className="min-h-screen flex">
       {/* Left Panel - Dark */}
-      <div className="hidden lg:flex lg:w-1/2 bg-[#353945] px-32 py-12 flex-col">
+      <div className="hidden lg:flex lg:w-1/2 bg-[#353945] px-12 xl:px-32 py-12 flex-col">
         {/* Logo */}
         <div className="mb-auto">
           <div className="px-5 py-2.5 rounded-full bg-white text-sm font-medium text-gray-900 flex items-center gap-2 w-fit">
@@ -82,10 +82,10 @@ const Login = () => {
       </div>
 
       {/* Right Panel - White Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center py-8 px-8 bg-white">
+      <div className="w-full lg:w-1/2 flex items-center justify-center py-8 px-6 sm:px-8 md:px-12 bg-white">
         <div className="w-full max-w-sm space-y-4">
-          <div className="mb-10">
-            <h2 className="text-2xl font-bold text-[#27272E] mb-1">
+          <div className="mb-8 md:mb-10">
+            <h2 className="text-xl sm:text-2xl font-bold text-[#27272E] mb-1">
               Welcome back!
             </h2>
             <p className="text-[#27272E] text-sm">Meet the good taste today</p>

@@ -23,25 +23,25 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-10 bg-[#FCFCFD]">
-      <div className="max-w-container mx-auto px-20">
-        <div className="text-center mb-8">
-          <p className="text-lg font-semibold text-black  tracking-wide mb-4">
+    <section className="py-10 md:py-12 lg:py-14 bg-[#FCFCFD]">
+      <div className="max-w-container mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
+        <div className="text-center mb-8 md:mb-10">
+          <p className="text-base md:text-lg font-semibold text-black tracking-wide mb-3 md:mb-4">
             Our Feature
           </p>
-          <h2 className="text-3xl md:text-2xl font-bold text-gray-900">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
             Quality is Our First Priority
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {features.map(feature => (
             <div
               key={feature.id}
-              className="text-center w-[207px] h-[216px] gap-2 rotate-0 opacity-100 flex flex-col"
+              className="text-center flex flex-col items-center mx-auto max-w-[250px]"
             >
-              <div className="flex justify-center">
-                <div className="w-16 h-16 rounded-full flex items-center justify-center">
+              <div className="flex justify-center mb-4">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center">
                   <svg
                     width="41"
                     height="52"
@@ -57,7 +57,7 @@ const Features = () => {
                   </svg>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-[#304659]">
+              <h3 className="text-lg md:text-xl font-semibold text-[#304659] mb-2">
                 {feature.title}
               </h3>
               <p className="text-sm text-[#3B5266] leading-relaxed">

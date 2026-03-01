@@ -62,15 +62,17 @@ const Checkout = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FCFCFD] py-16">
-      <div className="max-w-container mx-auto px-20">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">Checkout</h1>
+    <div className="min-h-screen bg-[#FCFCFD] py-12 md:py-16">
+      <div className="max-w-container mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">
+          Checkout
+        </h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
           {/* Checkout Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg border border-gray-200 p-8">
-              <h2 className="text-xl font-bold text-gray-900 mb-6">
+            <div className="bg-white rounded-lg border border-gray-200 p-5 md:p-8">
+              <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-5 md:mb-6">
                 Shipping Information
               </h2>
 
@@ -138,7 +140,7 @@ const Checkout = () => {
                   />
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label
                       htmlFor="city"
@@ -191,12 +193,12 @@ const Checkout = () => {
 
           {/* Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg border border-gray-200 p-6 sticky top-24">
-              <h2 className="text-xl font-bold text-gray-900 mb-6">
+            <div className="bg-white rounded-lg border border-gray-200 p-5 md:p-6 sticky top-24">
+              <h2 className="text-lg md:text-xl font-bold text-gray-900 mb-5 md:mb-6">
                 Order Summary
               </h2>
 
-              <div className="space-y-4 mb-6">
+              <div className="space-y-3 md:space-y-4 mb-5 md:mb-6">
                 {cartItems.map(item => (
                   <div key={item._id} className="flex justify-between text-sm">
                     <span className="text-gray-600">

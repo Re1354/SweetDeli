@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#F7F8FA] text-[#353945] pt-8 px-24">
-      <div className="max-w-container mx-auto px-20 pt-0 pb-6">
-        <div className="grid grid-cols-4 gap-16">
+    <footer className="bg-[#F7F8FA] text-[#353945] pt-8 px-4 sm:px-6 md:px-10 lg:px-24">
+      <div className="max-w-container mx-auto px-4 sm:px-6 md:px-10 lg:px-20 pt-0 pb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16">
           {/* Brand Section */}
           <div className="space-y-4">
             <h3 className="text-lg font-bold">Sweetdeli</h3>
@@ -13,7 +13,7 @@ const Footer = () => {
               <p>sweetdeli@gmail.com</p>
               <p>+1-2345-6789</p>
               <p>123 Ave, New York, USA</p>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3 md:gap-4">
                 <a
                   href="#"
                   className="w-6 h-6 bg-gray-300 rounded flex items-center justify-center hover:bg-gray-400 transition-colors"
@@ -68,7 +68,9 @@ const Footer = () => {
 
           {/* Products */}
           <div>
-            <h4 className="text-sm font-semibold mb-4 pt-11">Products</h4>
+            <h4 className="text-sm font-semibold mb-4 pt-0 lg:pt-11">
+              Products
+            </h4>
             <ul className="space-y-1.5 text-sm text-[#363940]">
               <li>
                 <Link to="#" className="hover:text-gray-900 transition-colors">
@@ -100,7 +102,7 @@ const Footer = () => {
 
           {/* About */}
           <div>
-            <h4 className="text-sm font-semibold mb-4 pt-11">About</h4>
+            <h4 className="text-sm font-semibold mb-4 pt-0 lg:pt-11">About</h4>
             <ul className="space-y-1.5 text-sm text-[#363940]">
               <li>
                 <Link to="#" className="hover:text-gray-900 transition-colors">
@@ -132,7 +134,9 @@ const Footer = () => {
 
           {/* Get the app */}
           <div>
-            <h4 className="text-sm font-semibold mb-4 pt-11">Get the app</h4>
+            <h4 className="text-sm font-semibold mb-4 pt-0 lg:pt-11">
+              Get the app
+            </h4>
             <div className="space-y-2">
               <a
                 href="#"
@@ -173,14 +177,14 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex items-center justify-between mt-10  border-gray-300">
-          <select className="px-3 py-1 bg-white border border-gray-300 rounded text-sm text-[#95A1BB]">
+        <div className="flex flex-col sm:flex-row items-center justify-between mt-10 gap-4 border-gray-300">
+          <select className="px-3 py-1 bg-white border border-gray-300 rounded text-sm text-[#95A1BB] w-full sm:w-auto">
             <option>English</option>
             <option>Spanish</option>
             <option>French</option>
           </select>
 
-          <div className="text-xs text-[#95A1BB]">
+          <div className="text-xs text-[#95A1BB] text-center">
             Copyright © 2026 All rights reserved
           </div>
         </div>

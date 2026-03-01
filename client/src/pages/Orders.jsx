@@ -43,8 +43,8 @@ const Orders = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#FCFCFD] py-16">
-        <div className="max-w-container mx-auto px-20">
+      <div className="min-h-screen bg-[#FCFCFD] py-12 md:py-16">
+        <div className="max-w-container mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="text-center">
             <p className="text-gray-600">Loading orders...</p>
           </div>
@@ -55,9 +55,9 @@ const Orders = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-[#FCFCFD] py-16">
-        <div className="max-w-container mx-auto px-20">
-          <div className="bg-red-50 border border-red-200 text-red-600 px-6 py-4 rounded-lg">
+      <div className="min-h-screen bg-[#FCFCFD] py-12 md:py-16">
+        <div className="max-w-container mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
+          <div className="bg-red-50 border border-red-200 text-red-600 px-4 md:px-6 py-3 md:py-4 rounded-lg text-sm md:text-base">
             {error}
           </div>
         </div>
@@ -66,14 +66,16 @@ const Orders = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#FCFCFD] py-16">
-      <div className="max-w-container mx-auto px-20">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">My Orders</h1>
+    <div className="min-h-screen bg-[#FCFCFD] py-12 md:py-16">
+      <div className="max-w-container mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">
+          My Orders
+        </h1>
 
         {orders.length === 0 ? (
-          <div className="bg-white rounded-lg border border-gray-200 p-12 text-center">
+          <div className="bg-white rounded-lg border border-gray-200 p-8 md:p-12 text-center">
             <svg
-              className="w-16 h-16 mx-auto text-gray-300 mb-4"
+              className="w-12 h-12 md:w-16 md:h-16 mx-auto text-gray-300 mb-4"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.5"
@@ -85,31 +87,31 @@ const Orders = () => {
                 d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
               />
             </svg>
-            <h2 className="text-xl font-semibold text-gray-900 mb-2">
+            <h2 className="text-lg md:text-xl font-semibold text-gray-900 mb-2">
               No orders yet
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">
               Start shopping to create your first order!
             </p>
             <button
               onClick={() => navigate('/')}
-              className="inline-block bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors"
+              className="inline-block bg-black text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full font-medium hover:bg-gray-800 transition-colors text-sm md:text-base"
             >
               Start Shopping
             </button>
           </div>
         ) : (
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {orders.map(order => (
               <div
                 key={order._id}
                 className="bg-white rounded-lg border border-gray-200 overflow-hidden"
               >
                 {/* Order Header */}
-                <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
-                  <div className="flex justify-between items-center">
+                <div className="bg-gray-50 px-4 md:px-6 py-3 md:py-4 border-b border-gray-200">
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
                     <div>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-xs sm:text-sm text-gray-600">
                         Order placed on{' '}
                         {new Date(order.createdAt).toLocaleDateString('en-US', {
                           year: 'numeric',
@@ -117,16 +119,16 @@ const Orders = () => {
                           day: 'numeric',
                         })}
                       </p>
-                      <p className="text-xs text-gray-500 mt-1">
+                      <p className="text-xs text-gray-500 mt-1 truncate max-w-[200px] sm:max-w-none">
                         Order ID: {order._id}
                       </p>
                     </div>
-                    <div className="text-right">
-                      <p className="text-lg font-bold text-gray-900">
+                    <div className="text-left sm:text-right flex sm:flex-col items-center sm:items-end gap-3 sm:gap-2">
+                      <p className="text-base md:text-lg font-bold text-gray-900">
                         ${order.totalAmount.toFixed(2)}
                       </p>
                       <span
-                        className={`inline-block px-3 py-1 rounded-full text-xs font-semibold mt-2 ${getStatusColor(
+                        className={`inline-block px-2.5 md:px-3 py-1 rounded-full text-xs font-semibold ${getStatusColor(
                           order.status,
                         )}`}
                       >
@@ -138,14 +140,14 @@ const Orders = () => {
                 </div>
 
                 {/* Order Items */}
-                <div className="p-6">
-                  <h3 className="font-semibold text-gray-900 mb-4">
+                <div className="p-4 md:p-6">
+                  <h3 className="font-semibold text-gray-900 mb-3 md:mb-4 text-sm md:text-base">
                     Order Items
                   </h3>
-                  <div className="space-y-4">
+                  <div className="space-y-3 md:space-y-4">
                     {order.items.map((item, index) => (
-                      <div key={index} className="flex gap-4">
-                        <div className="w-16 h-16 bg-gray-100 rounded flex-shrink-0 overflow-hidden">
+                      <div key={index} className="flex gap-3 md:gap-4">
+                        <div className="w-14 h-14 md:w-16 md:h-16 bg-gray-100 rounded flex-shrink-0 overflow-hidden">
                           {item.image ? (
                             <img
                               src={
@@ -180,16 +182,16 @@ const Orders = () => {
                             </div>
                           )}
                         </div>
-                        <div className="flex-1">
-                          <h4 className="font-medium text-gray-900">
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-medium text-gray-900 text-sm md:text-base truncate">
                             {item.name}
                           </h4>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-xs md:text-sm text-gray-600">
                             Quantity: {item.quantity} × ${item.price.toFixed(2)}
                           </p>
                         </div>
-                        <div className="text-right">
-                          <p className="font-semibold text-gray-900">
+                        <div className="text-right flex-shrink-0">
+                          <p className="font-semibold text-gray-900 text-sm md:text-base">
                             ${(item.price * item.quantity).toFixed(2)}
                           </p>
                         </div>
@@ -199,11 +201,11 @@ const Orders = () => {
 
                   {/* Shipping Address */}
                   {order.shippingAddress && (
-                    <div className="mt-6 pt-6 border-t border-gray-200">
-                      <h4 className="font-semibold text-gray-900 mb-2">
+                    <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-200">
+                      <h4 className="font-semibold text-gray-900 mb-2 text-sm md:text-base">
                         Shipping Address
                       </h4>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-xs md:text-sm text-gray-600">
                         {order.shippingAddress.fullName}
                         <br />
                         {order.shippingAddress.address}

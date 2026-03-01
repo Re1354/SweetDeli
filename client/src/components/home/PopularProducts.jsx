@@ -27,22 +27,22 @@ const PopularProducts = () => {
   ];
 
   return (
-    <section className="bg-[#FCFCFD]">
-      <div className="max-w-container mx-auto px-20">
-        <div className="flex items-start justify-between mb-12">
+    <section className="bg-[#FCFCFD] py-8 md:py-12">
+      <div className="max-w-container mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
+        <div className="flex items-start justify-between mb-8 md:mb-12">
           <div className="text-center flex-1 max-w-md mx-auto">
             <p className="text-xs font-bold text-gray-800 uppercase tracking-wide mb-1">
               Most Popular
             </p>
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">
               Our Exclusive Cakes
             </h2>
           </div>
         </div>
 
-        <div className="relative -mt-20">
+        <div className="relative -mt-12 md:-mt-20">
           {/* Navigation Arrows */}
-          <div className="flex gap-2 items-center justify-end mb-6">
+          <div className="flex gap-2 items-center justify-end mb-4 md:mb-6">
             <button className="w-9 h-9 flex items-center justify-center border border-gray-300 rounded-md hover:bg-gray-50 transition-colors">
               <svg
                 className="w-4 h-4 text-gray-600"
@@ -74,7 +74,7 @@ const PopularProducts = () => {
               </svg>
             </button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 -pt-20">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 -pt-20">
             {popularProducts.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}

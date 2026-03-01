@@ -17,11 +17,11 @@ const Cart = () => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="min-h-screen bg-[#FCFCFD] py-16">
-        <div className="max-w-container mx-auto px-20">
+      <div className="min-h-screen bg-[#FCFCFD] py-12 md:py-16">
+        <div className="max-w-container mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
           <div className="text-center">
             <svg
-              className="w-24 h-24 mx-auto text-gray-300 mb-6"
+              className="w-16 h-16 md:w-24 md:h-24 mx-auto text-gray-300 mb-4 md:mb-6"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.5"
@@ -33,15 +33,15 @@ const Cart = () => {
                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.4 5M17 13l1.4 5M9 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"
               />
             </svg>
-            <h2 className="text-2xl font-bold text-gray-900 mb-3">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">
               Your cart is empty
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">
               Add some delicious items to get started!
             </p>
             <Link
               to="/"
-              className="inline-block bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors"
+              className="inline-block bg-black text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full font-medium hover:bg-gray-800 transition-colors text-sm md:text-base"
             >
               Continue Shopping
             </Link>
@@ -52,20 +52,22 @@ const Cart = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#FCFCFD] py-16">
-      <div className="max-w-container mx-auto px-20">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">Shopping Cart</h1>
+    <div className="min-h-screen bg-[#FCFCFD] py-12 md:py-16">
+      <div className="max-w-container mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 md:mb-8">
+          Shopping Cart
+        </h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
           {/* Cart Items */}
           <div className="lg:col-span-2 space-y-4">
             {cartItems.map(item => (
               <div
                 key={item._id}
-                className="bg-white rounded-lg border border-gray-200 p-6 flex gap-6"
+                className="bg-white rounded-lg border border-gray-200 p-4 md:p-6 flex flex-col sm:flex-row gap-4 md:gap-6"
               >
                 {/* Product Image */}
-                <div className="w-24 h-24 bg-gray-100 rounded-lg flex-shrink-0 overflow-hidden">
+                <div className="w-full sm:w-24 h-32 sm:h-24 bg-gray-100 rounded-lg flex-shrink-0 overflow-hidden">
                   {item.image ? (
                     <img
                       src={
@@ -99,49 +101,51 @@ const Cart = () => {
                 </div>
 
                 {/* Product Details */}
-                <div className="flex-1">
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">
-                    {item.name}
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-3">
-                    ${item.price.toFixed(2)} each
-                  </p>
+                <div className="flex-1 flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <h3 className="text-base md:text-lg font-bold text-gray-900 mb-1">
+                      {item.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-3">
+                      ${item.price.toFixed(2)} each
+                    </p>
 
-                  {/* Quantity Controls */}
-                  <div className="flex items-center gap-3">
+                    {/* Quantity Controls */}
+                    <div className="flex items-center gap-3">
+                      <button
+                        onClick={() =>
+                          updateQuantity(item._id, item.quantity - 1)
+                        }
+                        className="w-8 h-8 border border-gray-300 rounded hover:bg-gray-100 transition-colors flex items-center justify-center"
+                      >
+                        -
+                      </button>
+                      <span className="text-gray-900 font-medium w-12 text-center">
+                        {item.quantity}
+                      </span>
+                      <button
+                        onClick={() =>
+                          updateQuantity(item._id, item.quantity + 1)
+                        }
+                        className="w-8 h-8 border border-gray-300 rounded hover:bg-gray-100 transition-colors flex items-center justify-center"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Price & Remove */}
+                  <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-between gap-2">
+                    <p className="text-base md:text-lg font-bold text-gray-900">
+                      ${(item.price * item.quantity).toFixed(2)}
+                    </p>
                     <button
-                      onClick={() =>
-                        updateQuantity(item._id, item.quantity - 1)
-                      }
-                      className="w-8 h-8 border border-gray-300 rounded hover:bg-gray-100 transition-colors"
+                      onClick={() => removeFromCart(item._id)}
+                      className="text-red-600 hover:text-red-700 text-sm font-medium"
                     >
-                      -
-                    </button>
-                    <span className="text-gray-900 font-medium w-12 text-center">
-                      {item.quantity}
-                    </span>
-                    <button
-                      onClick={() =>
-                        updateQuantity(item._id, item.quantity + 1)
-                      }
-                      className="w-8 h-8 border border-gray-300 rounded hover:bg-gray-100 transition-colors"
-                    >
-                      +
+                      Remove
                     </button>
                   </div>
-                </div>
-
-                {/* Price & Remove */}
-                <div className="text-right flex flex-col justify-between">
-                  <p className="text-lg font-bold text-gray-900">
-                    ${(item.price * item.quantity).toFixed(2)}
-                  </p>
-                  <button
-                    onClick={() => removeFromCart(item._id)}
-                    className="text-red-600 hover:text-red-700 text-sm font-medium"
-                  >
-                    Remove
-                  </button>
                 </div>
               </div>
             ))}
@@ -149,7 +153,7 @@ const Cart = () => {
 
           {/* Order Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg border border-gray-200 p-6 sticky top-24">
+            <div className="bg-white rounded-lg border border-gray-200 p-5 md:p-6 sticky top-24">
               <h2 className="text-xl font-bold text-gray-900 mb-6">
                 Order Summary
               </h2>

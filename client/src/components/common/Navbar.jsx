@@ -9,6 +9,7 @@ const Navbar = () => {
   const { user, logout, isAuthenticated } = useAuth();
   const { getCartCount } = useCart();
   const [showUserMenu, setShowUserMenu] = useState(false);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -45,20 +46,20 @@ const Navbar = () => {
 
   return (
     <nav className="bg-[#FCFCFD] border-b border-gray-200">
-      <div className="max-w-container mx-auto px-20">
+      <div className="max-w-container mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
         <div className="flex items-center justify-between h-16">
           {/* Left: Logo + Divider */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3 md:gap-6">
             {/* Logo pill */}
-            <div className="px-4 py-1.5 rounded-full bg-gray-100 text-sm font-medium text-gray-800 flex items-center gap-2">
+            <div className="px-3 md:px-4 py-1.5 rounded-full bg-gray-100 text-xs md:text-sm font-medium text-gray-800 flex items-center gap-2">
               LOGO
             </div>
 
-            {/* Divider */}
-            <div className="h-[24px] w-[2px] bg-gray-300" />
+            {/* Divider - Hidden on mobile */}
+            <div className="hidden md:block h-[24px] w-[2px] bg-gray-300" />
 
-            {/* Navigation */}
-            <div className="hidden md:flex items-center gap-8 text-sm font-medium text-[#777E90]">
+            {/* Navigation - Desktop */}
+            <div className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium text-[#777E90]">
               <Link to="/" className="hover:text-gray-900">
                 Home
               </Link>
@@ -78,7 +79,7 @@ const Navbar = () => {
           </div>
 
           {/* Right: Icons */}
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-3 md:gap-5">
             {/* Shopping Cart */}
             <button
               onClick={() => navigate('/cart')}
@@ -163,8 +164,77 @@ const Navbar = () => {
                 </div>
               )}
             </div>
+
+            {/* Hamburger Menu Button - Mobile */}
+            <button
+              onClick={() => setShowMobileMenu(!showMobileMenu)}
+              className="lg:hidden text-[#777E90] hover:text-gray-900"
+            >
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                {showMobileMenu ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {showMobileMenu && (
+          <div className="lg:hidden border-t border-gray-200 py-4 space-y-3">
+            <Link
+              to="/"
+              onClick={() => setShowMobileMenu(false)}
+              className="block text-sm font-medium text-[#777E90] hover:text-gray-900 py-2"
+            >
+              Home
+            </Link>
+            <Link
+              to="/discover"
+              onClick={() => setShowMobileMenu(false)}
+              className="block text-sm font-medium text-[#777E90] hover:text-gray-900 py-2"
+            >
+              Discover
+            </Link>
+            <Link
+              to="/blog"
+              onClick={() => setShowMobileMenu(false)}
+              className="block text-sm font-medium text-[#777E90] hover:text-gray-900 py-2"
+            >
+              Blog
+            </Link>
+            <Link
+              to="/about"
+              onClick={() => setShowMobileMenu(false)}
+              className="block text-sm font-medium text-[#777E90] hover:text-gray-900 py-2"
+            >
+              About Us
+            </Link>
+            <Link
+              to="/contact"
+              onClick={() => setShowMobileMenu(false)}
+              className="block text-sm font-medium text-[#777E90] hover:text-gray-900 py-2"
+            >
+              Contact
+            </Link>
+          </div>
+        )}
       </div>
     </nav>
   );
