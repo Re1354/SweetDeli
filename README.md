@@ -142,14 +142,4 @@ VITE_API_URL=http://localhost:5000/api
 - ✅ Security (Helmet, CORS, Rate limiting)
 - ✅ Password hashing with bcrypt
 
-## 👥 Contributing
 
-This is a portfolio project. Contributions are welcome!
-
-## 📄 License
-
-MIT
-
----
-
-**Built with ❤️ for Aspire Placement Evaluation**
