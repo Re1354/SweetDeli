@@ -1,7 +1,8 @@
 # SweetDeli – Full-Stack E-Commerce Platform
 
 SweetDeli is a modern, full-stack e-commerce web application for a sweet delicacies shop, built to demonstrate clean UI design, scalable backend architecture, and secure authentication using industry best practices.
-Live Demo: sweet-deli.vercel.app
+
+# Live Demo: https://sweet-deli.vercel.app/
 
 ---
 
