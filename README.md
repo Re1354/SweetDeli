@@ -149,4 +149,4 @@ VITE_API_URL=http://localhost:5000/api
 * Security middleware (Helmet, CORS, Rate Limiting)
 * Password hashing using bcrypt
 
----
+----
